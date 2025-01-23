@@ -6,16 +6,16 @@ const createUser = async(req, res = response) => {
   const { name, email, password } = req.body;
 
   try {
-    let existingUser = await User.findOne({ email })
+    let user = await User.findOne({ email })
 
-    if ( existingUser ) {
+    if ( user ) {
       return res.status(400).json({
         ok: false,
         msg: 'Un usuario ya existe con este correo'
       })
     }
 
-    const user = new User(req.body);
+    user = new User(req.body);
     await user.save();
 
     res.status(201).json({
