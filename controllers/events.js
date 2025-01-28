@@ -1,7 +1,7 @@
 const { response } = require('express');
 
 
-const getEvent = ( req, res = response) => {
+const getEvents = ( req, res = response) => {
   res.json({
     ok: true,
     msg: 'getEvents'
@@ -32,7 +32,7 @@ const deleteEvent = (req, res = response) => {
 }
 
 module.exports = {
-  getEvent,
+  getEvents,
   createEvent,
   updateEvent,
   deleteEvent
