@@ -8,7 +8,7 @@ const getEvents = async( req, res = response) => {
 
   res.json({
     ok: true,
-    msg: events
+    events: events
   });
 }
 
